@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip> //для вывода округленного числа
+
+using namespace std;
+
+double fact(double i) {    //подсчет факториала n
+    if (i == 1){
+        i = 1;
+    }
+    else {
+        i = i * fact(i - 1);
+    }
+    return i;
+}
+
+int main() {
+    int n = 0;
+    double sum = 0;
+    cout << "vvedite n" << endl;
+    cin >> n;
+    for (int i = 1; i <=n; i++) {
+        sum = sum + fact(i) / fact (2 * i);  //подсчет суммы элементов an
+    }
+    cout << std::setprecision(4) << sum << endl;
+return 0;
+}
